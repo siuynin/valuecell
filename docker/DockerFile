@@ -13,5 +13,9 @@ RUN uv sync --locked
 
 EXPOSE 8000
 
+# Set environment variables for the server
+ENV API_HOST=0.0.0.0
+ENV API_PORT=8000
+
 # Run the application.
-CMD ["uv", "run", "python", "main.py", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uv", "run", "python", "-m", "valuecell.server.main"]
