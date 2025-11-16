@@ -34,7 +34,7 @@ class Settings:
 
         # API Configuration
         self.API_HOST = os.getenv("API_HOST", "0.0.0.0")
-        self.API_PORT = int(os.getenv("API_PORT", "8000"))
+        self.API_PORT = int(os.getenv("API_PORT") or os.getenv("PORT", "8000"))
         self.API_DEBUG = os.getenv("API_DEBUG", "false").lower() == "true"
 
         # CORS Configuration

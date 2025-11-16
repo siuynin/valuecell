@@ -12,6 +12,9 @@ app = create_app()
 def main():
     """Start the server."""
     settings = get_settings()
+    
+    # Log để debug
+    print(f"Starting server on {settings.API_HOST}:{settings.API_PORT}")
 
     uvicorn.run(
         app,
